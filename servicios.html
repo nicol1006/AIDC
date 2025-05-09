@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asoc. Instituto Dominicano de Cardiología</title>
+    <link rel="website icon" type="png" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="chat-styles.css">
+
+</head>
+<body>
+    
+    <header>
+    <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/pinpin.png" alt="AIDC Logo">
+                    </a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li class="active"><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                          <li><a href="equipo.html">NUESTRO EQUIPO</a></li>
+                        <li><a href="servicios.html">SERVICIOS</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="login.html"><i class="fas fa-user"></i> RESULTADOS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <style>
+   /*servicios*/
+
+:root {
+    --primary-color:#b01a33;
+    --secondary-color: #b01a33;
+    --accent-color: #070707;
+    --light-bg: #f9f9f9;
+    --text-dark: #333;
+    --text-light: #777;
+    --white: #ffffff;
+    --shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+/* Reseteo y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}   
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header y navegación */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.top-bar {
+    background-color: #f5f5f5;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-info, .contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #666;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #b01a33;;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.main-menu ul {
+    display: flex;
+    gap: 5px;
+}
+
+.main-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.0s;
+}
+
+.main-menu li.active a, .main-menu li a:hover {
+    color: #b01a33;;
+}
+
+/* Estilos del Banner */
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/api/placeholder/1200/400') center/cover;
+    opacity: 0.2;
+}
+
+.page-banner .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-banner h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(207, 16, 16, 0.2);
+}
+
+.breadcrumbs {
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+}
+
+.breadcrumbs a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumbs a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* Imagen del Banner */
+.banner-image {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 8s ease;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-text {
+    color: var(--white);
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.banner-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.banner-text p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* Estilos del Contenido */
+.content {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icon-heart {
+    display: inline-block;
+    margin-left: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.icon-heart img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+/* Estilos de Servicios */
+.services-section {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.services-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.services-section h3 {
+    color: var(--secondary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.service-column ul {
+    list-style: none;
+}
+
+.service-column li {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.service-column li:hover {
+    background-color: #e8f4fc;
+    transform: translateX(5px);
+}
+
+.service-column li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+/* Detalles de Servicios */
+.services-details {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.services-details p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.services-details ul {
+    margin-bottom: 20px;
+    padding-left: 40px;
+}
+
+.services-details ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.services-details h4 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin: 25px 0 15px;
+}
+
+/* Sección de Seguros */
+.insurance-section {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.insurance-section h3 {
+    color: var(--secondary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.icon-insurance {
+    margin-left: 10px;
+}
+
+.icon-insurance img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.insurance-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.insurance-column {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    border-top: 4px solid var(--accent-color);
+}
+
+.insurance-column h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.insurance-column ul {
+    list-style: none;
+}
+
+.insurance-column li {
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.insurance-column li i {
+    color: #121312;
+    margin-right: 10px;
+}
+
+/* Tarjetas Especiales para Servicios */
+.featured-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.featured-service-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.featured-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(52, 152, 219, 0.1));
+    transition: all 0.6s;
+    z-index: -1;
+}
+
+.featured-service-card:hover::before {
+    left: 0;
+}
+
+.featured-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.featured-service-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #e8f4fc;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.featured-service-card:hover .featured-service-icon {
+    background-color: var(--accent-color);
+    transform: rotateY(180deg);
+}
+
+.featured-service-icon i {
+    font-size: 34px;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.featured-service-card:hover .featured-service-icon i {
+    color: var(--white);
+    transform: rotateY(180deg);
+}
+
+.featured-service-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.featured-service-desc {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {            
+    .main-header .container {
+        flex-direction: column;
+    }
+    
+    .main-menu {
+        margin-top: 20px;
+    }
+    
+    .main-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .banner-image {
+        height: 300px;
+    }
+    
+    .featured-services {
+        flex-direction: column;
+    }
+    
+    .cta-grid {
+        flex-direction: column;
+    }
+    
+    .footer-grid, .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-contact-item {
+        justify-content: center;
+    }
+    
+    .social-footer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-banner h1 {
+        font-size: 32px;
+    }
+    
+    .main-menu li {
+        margin: 5px 10px;
+    }
+    
+    .services-grid, .insurance-grid {
+        flex-direction: column;
+    }
+    
+    .banner-text h2 {
+        font-size: 28px;
+    }
+}
+
+
+/*================footer===========================*/
+
+/* Footer CTA */
+.footer{
+    position: absolute;
+    width: 1350px;
+    height: 500px;
+
+    left: 0%;
+}
+
+.footer-cta {
+    background-color: #b01a33;
+    color: white;
+    padding: 20px 0;
+}
+
+.cta-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cta-box {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.cta-box i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.cta-box h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.cta-box p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-widget h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-widget p {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.footer-news-item {
+    margin-bottom: 15px;
+}
+
+.footer-news-title {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.footer-news-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.footer-contact-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.footer-contact-item i {
+    color: #b01a33;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.footer-contact-text {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+.social-footer {
+    text-align: right;
+}
+
+.social-footer a {
+    color: #888;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* Testimonial */
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-signature {
+    margin-top: 15px;
+    color: #b01a33;
+    font-size: 14px;
+}
+
+/* Tagline */
+.tagline {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.tagline p {
+    font-style: italic;
+    color: #b01a33;
+}
+</style>
+
+    
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Nuestros Servicios</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Inicio</a> &gt; <span>Servicios</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-image">
+        <img src="img/la secre.png" alt="Servicios médicos de calidad">
+        <div class="banner-overlay">
+            <div class="banner-text">
+                <h2>CARDIOLOGIA PARA TODOS</h2>
+                <p>En AIDC ofrecemos servicios completos para el cuidado y prevención de enfermedades cardiovasculares con la más alta tecnología y profesionales altamente calificados.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Servicios Especializados <span class="icon-heart"><i class="fas fa-heartbeat" style="color: #e74c3c;"></i></span></h2>
+            </div>
+
+            <div class="featured-services">
+                <div class="featured-service-card">
+                    <div class="featured-service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="featured-service-title">Consultas Especializadas</h3>
+                    <p class="featured-service-desc">Atención médica por especialistas en cardiología, electrofisiología y más.</p>
+                </div>
+                
+                <div class="featured-service-card">
+                    <div class="featured-service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="featured-service-title">Estudios Diagnósticos</h3>
+                    <p class="featured-service-desc">Procedimientos avanzados para evaluar la salud cardiovascular.</p>
+                </div>
+                
+                <div class="featured-service-card">
+                    <div class="featured-service-icon">
+                        <i class="fas fa-notes-medical"></i>
+                    </div>
+                    <h3 class="featured-service-title">Prevención</h3>
+                    <p class="featured-service-desc">Programas personalizados para reducir riesgos cardiovasculares.</p>
+                </div>
+            </div>
+
+            <section class="services-section">
+                <h3><i class="fas fa-stethoscope"></i> Consultas</h3>
+                <div class="services-grid">
+                    <div class="service-column">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Cardiología</li>
+                            <li><i class="fas fa-check-circle"></i> Electrofisiología</li>
+                            <li><i class="fas fa-check-circle"></i> Nutrición</li>
+                            <li><i class="fas fa-check-circle"></i> Medicina Interna</li>
+                        </ul>
+                    </div>
+                    <div class="service-column">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Cardiología Pediátrica</li>
+                            <li><i class="fas fa-check-circle"></i> Psicología</li>
+                            <li><i class="fas fa-check-circle"></i> Rehabilitación Física</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services-section">
+                <h3><i class="fas fa-microscope"></i> Estudios</h3>
+                <div class="services-grid">
+                    <div class="service-column">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Electrocardiograma</li>
+                            <li><i class="fas fa-check-circle"></i> Ecocardiograma</li>
+                            <li><i class="fas fa-check-circle"></i> Ecocardiograma con Burbuja</li>
+                            <li><i class="fas fa-check-circle"></i> Eco Strain</li>
+                            <li><i class="fas fa-check-circle"></i> Ecocardiograma con Dobutamina</li>
+                            <li><i class="fas fa-check-circle"></i> Eco-estrés</li>
+                        </ul>
+                    </div>
+                    <div class="service-column">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Prueba de Esfuerzo</li>
+                            <li><i class="fas fa-check-circle"></i> Holter</li>
+                            <li><i class="fas fa-check-circle"></i> Mapa</li>
+                            <li><i class="fas fa-check-circle"></i> Doppler Vascular</li>
+                            <li><i class="fas fa-check-circle"></i> Doppler Arterial</li>
+                            <li><i class="fas fa-check-circle"></i> Rx</li>
+                        </ul>
+                    </div>
+                    <div class="service-column">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Sonografía Abdominal y Hepática</li>
+                            <li><i class="fas fa-check-circle"></i> Tilt Test</li>
+                            <li><i class="fas fa-check-circle"></i> Rehabilitación Cardiovascular</li>
+                            <li><i class="fas fa-check-circle"></i> Programas de Nutrición y Acondicionamiento Físico</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services-section">
+                <h3><i class="fas fa-hospital-alt"></i> Unidades Especializadas</h3>
+                <div class="services-grid">
+                    <div class="service-column">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Cardiología General - Consulta Ambulatoria - Cardiología Pediátrica</li>
+                            <li><i class="fas fa-check-circle"></i> Nutrición Cardiovascular y Metabólica - Electrofisiología, Arritmias y Marcapasos</li>
+                            <li><i class="fas fa-check-circle"></i> Rehabilitación y Acondicionamiento Cardiovascular, Cardíaca y Pulmonar y Metabólica</li>
+                            <li><i class="fas fa-check-circle"></i> Nutrición y Acondicionamiento Físico</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="services-details">
+                <h3><i class="fas fa-shield-alt"></i> Programas de Prevención</h3>
+                <p>Medicina Cardiovascular Asociada, cuenta con programas de prevención para pacientes:</p>
+                <ul>
+                    <li><strong>Screening Cardiovascular para deportistas</strong> - Evaluación completa para asegurar una práctica deportiva segura.</li>
+                    <li><strong>Programa avanzado para deportistas de alto rendimiento</strong> - Seguimiento cardiovascular adaptado a su actividad física específica.</li>
+                </ul>
+
+                <h4>Plan Preventivo Especializado:</h4>
+                <p>El diagnóstico e identificación de factores de riesgo o enfermedad cardiovascular es esencial como parte de una evaluación completa. Nuestro plan preventivo consiste en una evaluación integral e incluye la detección y prevención oportuna del riesgo cardiovascular.</p>
+
+                <h4>Plan de Nutrición y Acondicionamiento físico:</h4>
+                <p>Un servicio individualizado que permite mejorar la salud cardiovascular y metabólica de los pacientes trabajando los diversos factores de riesgo asociados al peso y otras condiciones metabólicas de cada paciente con un programa de educación definido en cooperación con el médico especialista y plan motivacional individualizado.</p>
+            </section>
+
+            <section class="insurance-section">
+                <h3>Seguros <span class="icon-insurance"><i class="fas fa-shield-alt" style="color: #3498db;"></i></span></h3>
+                <div class="insurance-grid">
+                    <div class="insurance-column">
+                        <h4>AIDC</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Universal Exclusivo</li>
+                            <li><i class="fas fa-check-circle"></i>  Humano Seguros</li>
+                            <li><i class="fas fa-check-circle"></i>  MAPFRE Salud ARS</li>
+                            <li><i class="fas fa-check-circle"></i> BMI</li>
+                            <li><i class="fas fa-check-circle"></i> ARS SeNaSa</li>
+                            <li><i class="fas fa-check-circle"></i> ARS Yunen: Infinity International</li>
+                            <li><i class="fas fa-check-circle"></i> Banreservas Juul</li>
+                            <li><i class="fas fa-check-circle"></i> Seguros Roja</li>
+                            <li><i class="fas fa-check-circle"></i> ARS Banco Central: Plan Ejecutivo</li>
+</section>
+                            
+<footer class="footer">
+    <!-- Footer CTA -->
+<section class="footer-cta">
+    <div class="container">
+        <div class="cta-grid">
+            <div class="cta-box">
+                <i class="fas fa-map-marked-alt"></i>
+                <div class="cta-text">
+                    <h4>Nuestra Ubicación</h4>
+                    <p>Encuéntranos en el mapa</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <i class="fas fa-phone-alt"></i>
+                <div class="cta-text">
+                    <h4>(809)566-2219, Ext. 221</h4>
+                    <p>¿Tiene para una cita?</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <i class="fas fa-envelope"></i>
+                <div class="cta-text">
+                    <h4>Envíenos un Email</h4>
+                    <p>No dude en enviarnos un mensaje</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4>Sobre Nosotros</h4>
+                    <p>En aidc brindamos servicios integrales especializados en la atención y prevención cardiovascular.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Últimas Publicaciones</h4>
+                    <div class="footer-news-item">
+                        <p class="footer-news-title">Día Mundial del Corazón
+                            LA federación mundial del corazón (FMC), la organización mundial de la salud (OMS) y la UNESCO designaron a partir del año 2000 el día 29 de septiembre como Día Mundial del Corazón, con el objetivo de tener una estrategia para poder dar a conocer masivamente las enfermedades cardiovasculares, su prevención, control y tratamiento. En este año 2024 y bajo el lema “usa el corazón para actuar” campaña en colaboración con la World Heart Federation.</p>
+                        <p class="footer-news-date">Abril 7, 2024</p>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-text">
+                            <p>Calle Payábo, Esq. Limón, Los Ríos, Santo Domingo, D.N.</p>
+                        </div>
+                    </div>
+                  <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="footer-contact-text">
+                            <p>(809)566-2219, Ext. 221</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-text">
+                            <p> info@aidc.do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 . Esta página fue creada por Juana Osorio y Yuneiry Hernandez.</p>
+                <div class="social-footer">
+                    <a href="https://www.facebook.com/share/1EjtyDoiCU/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aidcardiologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="scripts.js"></script>
+    <style src="styles.css"></style>
+</body>
+</html>

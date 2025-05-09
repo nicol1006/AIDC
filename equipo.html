@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asoc. Instituto Dominicano de Cardiología</title>
+    <link rel="website icon" type="png" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="chat-styles.css">
+
+</head>
+<body>
+    
+    <header>
+    <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/pinpin.png" alt="AIDC Logo">
+                    </a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li class="active"><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                          <li><a href="equipo.html">NUESTRO EQUIPO</a></li>
+                        <li><a href="servicios.html">SERVICIOS</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="login.html"><i class="fas fa-user"></i> RESULTADOS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <div class="container">
+            <div class="breadcrumb">
+                <p><a href="index.html">Inicio</a> > <span>Nuestro Equipo</span></p>
+            </div>
+            
+        </div>
+    </section>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        .header-line {
+            height: 8px;
+            background-color: #b01a33;;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .doctors-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .doctor-card {
+            flex-basis: calc(33.33% - 20px);
+            margin-bottom: 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-photo {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .doctor-photo img {
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .doctor-name {
+            background-color:#b01a33;;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .doctor-name h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .doctor-name p {
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .doctor-info {
+            padding: 20px;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doctor-info p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .doctor-social {
+            display: flex;
+            padding: 15px;
+            justify-content: center;
+            border-top: 1px solid #eee;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            margin: 0 10px;
+            color: #b01a33;;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color:#b01a33;;
+            color: white;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #b01a33;;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 992px) {
+            .doctor-card {
+                flex-basis: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .doctor-card {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-line"></div>
+    
+    <div class="container">
+        <div class="doctors-grid">
+            <!-- Doctor 1 -->
+            <div class="doctor-card">
+                <div class="doctor-photo">
+                    <img src="img/HOMBRE1.jpg" alt="Dr. Pedro Ureña Velásquez">
+                </div>
+                <div class="doctor-name">
+                    <h3>Pedro Ureña Velásquez</h3>
+                    <p>Cardiólogo Intervencionista</p>
+                </div>
+            
+                <div class="doctor-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="doctor-card">
+                <div class="doctor-photo">
+                    <img src="img/MUJER1.jpg" alt="Dra. Claudia Almonte">
+                </div>
+                <div class="doctor-name">
+                    <h3>Claudia Almonte</h3>
+                    <p>Cardióloga Ecocardiografista</p>
+                </div>
+              
+                <div class="doctor-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-photo">
+                    <img src="img/HOMBRE2.jpg" alt="Dra. Claudia Almonte">
+                </div>
+                <div class="doctor-name">
+                    <h3>Eddy Hernandez</h3>
+                    <p>Cardióloga Ecocardiografista</p>
+                </div>
+                
+                <div class="doctor-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-photo">
+                    <img src="img/MUJER2.jpg" alt="Dra. Claudia Almonte">
+                </div>
+                <div class="doctor-name">
+                    <h3>Ana Perez</h3>
+                    <p>Cardióloga Ecocardiografista</p>
+                </div>
+            
+                <div class="doctor-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-photo">
+                    <img src="img/HOMBRE3.jpg" alt="Dra. Claudia Almonte">
+                </div>
+                <div class="doctor-name">
+                    <h3>Juan Oosrio</h3>
+                    <p>Cardióloga Ecocardiografista</p>
+                </div>
+                
+                <div class="doctor-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="doctor-card">
+                <div class="doctor-photo">
+                    <img src="img/MUJER3.jpg" alt="Dra. Ingrid Valdez Ramírez">
+                </div>
+                <div class="doctor-name">
+                    <h3>Ingrid Valdez Ramírez</h3>
+                    <p>Cardiólogo Intervencionista</p>
+                </div>
+                
+                <div class="doctor-social">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <script>
+        // JavaScript para interactividad (se puede expandir según necesidades)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Puedes agregar efectos hover o interacciones aquí
+            const socialIcons = document.querySelectorAll('.social-icon');
+            
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1)';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+            
+      <!-- Footer CTA -->
+<section class="footer-cta">
+    <div class="container">
+        <div class="cta-grid">
+            <div class="cta-box">
+                <i class="fas fa-map-marked-alt"></i>
+                <div class="cta-text">
+                    <h4>Nuestra Ubicación</h4>
+                    <p>Encuéntranos en el mapa</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <i class="fas fa-phone-alt"></i>
+                <div class="cta-text">
+                    <h4>(809)566-2219, Ext. 221</h4>
+                    <p>¿Tiene para una cita?</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <i class="fas fa-envelope"></i>
+                <div class="cta-text">
+                    <h4>Envíenos un Email</h4>
+                    <p>No dude en enviarnos un mensaje</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4>Sobre Nosotros</h4>
+                    <p>En aidc brindamos servicios integrales especializados en la atención y prevención cardiovascular.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Últimas Publicaciones</h4>
+                    <div class="footer-news-item">
+                        <p class="footer-news-title">Día Mundial del Corazón
+                            LA federación mundial del corazón (FMC), la organización mundial de la salud (OMS) y la UNESCO designaron a partir del año 2000 el día 29 de septiembre como Día Mundial del Corazón, con el objetivo de tener una estrategia para poder dar a conocer masivamente las enfermedades cardiovasculares, su prevención, control y tratamiento. En este año 2024 y bajo el lema “usa el corazón para actuar” campaña en colaboración con la World Heart Federation.</p>
+                        <p class="footer-news-date">Abril 7, 2024</p>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-text">
+                            <p>Calle Payábo, Esq. Limón, Los Ríos, Santo Domingo, D.N.</p>
+                        </div>
+                    </div>
+                  <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="footer-contact-text">
+                            <p>(809)566-2219, Ext. 221</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-text">
+                            <p> info@aidc.do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 . Esta página fue creada por Juana Osorio y Yuneiry Hernandez.</p>
+                <div class="social-footer">
+                    <a href="https://www.facebook.com/share/1EjtyDoiCU/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aidcardiologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    

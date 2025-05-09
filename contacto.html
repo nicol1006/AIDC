@@ -1,0 +1,468 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asoc. Instituto Dominicano de Cardiología</title>
+    <link rel="website icon" type="png" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="chat-styles.css">
+
+</head>
+<body>
+    
+    <header>
+    <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/pinpin.png" alt="AIDC Logo">
+                    </a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li class="active"><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                          <li><a href="equipo.html">NUESTRO EQUIPO</a></li>
+                        <li><a href="servicios.html">SERVICIOS</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="login.html"><i class="fas fa-user"></i> RESULTADOS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+<style>
+/* Header Styles */
+.page-header {
+    background: #b01a33;;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    color: #0f0f0f;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.breadcrumbs {
+    color: #f5eeee;
+    margin-top: 10px;
+}
+
+.breadcrumbs a {
+    color:#f5f0f1;;
+    text-decoration: none;
+}
+
+/* Layout & Container Styles */
+.content-container {
+    padding: 40px 0;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Contact Info Grid Styles */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.info-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card .icon {
+    font-size: 2rem;
+    color: #b01a33;;
+    margin-right: 20px;
+    width: 40px;
+    text-align: center;
+}
+
+.info-card .info {
+    flex: 1;
+}
+
+.info-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.info-card p {
+    color: #666;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Contact Form Styles */
+.contact-form-wrapper {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.contact-form h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.75rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group label i {
+    color:#b01a33;;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color:#b01a33;;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+    outline: none;
+}
+
+/* Button Styles */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    background:#b01a33;;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #b01a33;;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-primary i {
+    font-size: 1.2rem;
+}
+
+/* Additional Info Styles */
+.appointment-info {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.info-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.info-alert i {
+    color: #b01a33;
+    font-size: 1.25rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-wrapper,
+    .form-row,
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .info-card {
+        margin: 10px;
+    }
+
+    .page-header {
+        padding: 20px 0;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/*===============mapa============================     */
+
+.map-container {
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#google-map {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.map-tabs {
+    display: flex;
+    background: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.map-tab {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.map-tab.active {
+    color: #b01a33;;
+    border-bottom: 2px solid#b01a33;;
+}
+
+
+</style>
+
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>Contacto</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">INICIO</a> > CONTACTO
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container"> 
+            <div class="map-tabs">
+                <button class="map-tab active" onclick="cambiarTipoMapa('roadmap')">Mapa</button>
+                <button class="map-tab" onclick="cambiarTipoMapa('satellite')">Satélite</button>
+            </div>
+            <div id="google-map"></div>
+        </div>
+    </main>
+        
+        <script>
+        let mapa;
+        let tipoMapaActual = 'roadmap';
+        
+        function iniciarMapa() {
+            try {
+                // Coordenadas del Instituto Dominicano de Cardiología
+                const ubicacion = { lat: 18.4939418, lng: -69.9634963 };
+        
+                mapa = new google.maps.Map(document.getElementById("google-map"), {
+                    center: ubicacion,
+                    zoom: 17,
+                    mapTypeId: tipoMapaActual
+                });
+        
+                const marcador = new google.maps.Marker({
+                    position: ubicacion,
+                    map: mapa,
+                    title: "Instituto Dominicano de Cardiología",
+                    animation: google.maps.Animation.DROP
+                });
+        
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 10px;">
+                            <h3 style="margin: 0 0 10px; color: #b01a33;">Instituto Dominicano de Cardiología</h3>
+                            <p style="margin: 5px 0;">Santo Domingo, República Dominicana</p>
+                            <p style="margin: 5px 0;">Tel: (809) 566-2219</p>
+                            <a href="https://www.google.com/maps/place/Asoc.+Instituto+Dominicano+de+Cardiología/@18.4939469,-69.9660712,17z" target="_blank">Ver en Google Maps</a>
+                        </div>
+                    `
+                });
+        
+                marcador.addListener("click", () => {
+                    infoWindow.open(mapa, marcador);
+                });
+        
+                infoWindow.open(mapa, marcador);
+        
+            } catch (error) {
+                console.error("Error al cargar el mapa:", error);
+                document.getElementById("google-map").innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <p style="color: #b01a33; font-size: 18px;">No se pudo cargar el mapa.</p>
+                        <p>Verifica tu conexión a internet o la clave de API.</p>
+                        <p>Tel: (809) 566-2219</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function cambiarTipoMapa(tipo) {
+            if (!mapa) return;
+        
+            tipoMapaActual = tipo;
+            mapa.setMapTypeId(tipo);
+        
+            document.querySelectorAll('.map-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+        
+            event.currentTarget.classList.add('active');
+        }
+        
+        function cargarScriptGoogleMaps() {
+            var script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMapa';
+            script.async = true;
+            script.defer = true;
+            script.onerror = function() {
+                console.error("Error al cargar el script de Google Maps");
+                document.getElementById("google-map").innerHTML = '';
+            };
+            document.body.appendChild(script);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarScriptGoogleMaps();
+        });
+        </script>
+        
+                    <!-- Formulario de contacto -->
+                    <div class="contact-form-wrapper">
+                        <div class="contact-form">
+                            <h3>Envíanos un mensaje</h3>
+                            <form id="contactForm" action="procesar_contacto.php" method="POST">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            <i class="fas fa-user"></i>
+                                            Nombre completo
+                                        </label>
+                                        <input type="text" id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">
+                                            <i class="fas fa-envelope"></i>
+                                            Correo electrónico
+                                        </label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">
+                                        <i class="fas fa-phone"></i>
+                                        Teléfono
+                                    </label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mensaje">
+                                        <i class="fas fa-comment"></i>
+                                        Mensaje
+                                    </label>
+                                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Enviar mensaje
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  
+
+         
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        
+        if (status === 'success') {
+            alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
+        } else if (status === 'error') {
+            alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+        }
+    
+
+    })
+;

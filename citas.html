@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asoc. Instituto Dominicano de Cardiología</title>
+    <link rel="website icon" type="png" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="chat-styles.css">
+
+</head>
+<body>
+    
+    <header>
+    <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/pinpin.png" alt="AIDC Logo">
+                    </a>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li class="active"><a href="index.html">INICIO</a></li>
+                        <li><a href="nosotros.html">NOSOTROS</a></li>
+                          <li><a href="equipo.html">NUESTRO EQUIPO</a></li>
+                        <li><a href="servicios.html">SERVICIOS</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                        <li><a href="login.html"><i class="fas fa-user"></i> RESULTADOS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Citas</h1>
+            <div class="breadcrumb">
+                <a href="index.html">INICIO</a> → CITAS
+            </div>
+
+            <!-- Buscador -->
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="Buscar...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Formulario de Citas -->
+            <div class="appointment-form-container">
+                <div class="form-header">
+                    <h2><i class="fas fa-pen"></i> Formulario de Citas</h2>
+                    <p>Puede solicitar su cita a través de nuestra página web ingresando sus datos en el siguiente formulario.</p>
+                    <button class="close-btn">&times;</button>
+                </div>
+                
+                <form class="appointment-form" action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cedula">Cédula / Pasaporte</label>
+                            <input type="text" id="cedula" name="cedula" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha de Consulta</label>
+                            <small>Favor elegir cuándo desea su cita</small>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Sexo</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="sexo" value="masculino"> Masculino
+                                </label>
+                                <label>
+                                    <input type="radio" name="sexo" value="femenino"> Femenino
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>¿Se ha consultado antes en AIDC?</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="consultado" value="si"> Sí
+                            </label>
+                            <label>
+                                <input type="radio" name="consultado" value="no"> No
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>¿Tiene Seguro Médico?</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="seguro" value="si"> Sí
+                            </label>
+                            <label>
+                                <input type="radio" name="seguro" value="no"> No
+                            </label>
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="form-group full-width">
+                        <label for="tipo">Tipo de Consulta</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Favor seleccionar una opción</option>
+                            <option value="primera">Primera consulta</option>
+                            <option value="seguimiento">Consulta de seguimiento</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="motivo">Motivo de Consulta</label>
+                        <textarea id="motivo" name="motivo" rows="5"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Enviar Solicitud</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+
+  <!-- Footer CTA -->
+<section class="footer-cta">
+    <div class="container">
+        <div class="cta-grid">
+            <div class="cta-box">
+                <i class="fas fa-map-marked-alt"></i>
+                <div class="cta-text">
+                    <h4>Nuestra Ubicación</h4>
+                    <p>Encuéntranos en el mapa</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <i class="fas fa-phone-alt"></i>
+                <div class="cta-text">
+                    <h4>(809)566-2219, Ext. 221</h4>
+                    <p>¿Tiene para una cita?</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <i class="fas fa-envelope"></i>
+                <div class="cta-text">
+                    <h4>Envíenos un Email</h4>
+                    <p>No dude en enviarnos un mensaje</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4>Sobre Nosotros</h4>
+                    <p>En aidc brindamos servicios integrales especializados en la atención y prevención cardiovascular.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Últimas Publicaciones</h4>
+                    <div class="footer-news-item">
+                        <p class="footer-news-title">Día Mundial del Corazón
+                            LA federación mundial del corazón (FMC), la organización mundial de la salud (OMS) y la UNESCO designaron a partir del año 2000 el día 29 de septiembre como Día Mundial del Corazón, con el objetivo de tener una estrategia para poder dar a conocer masivamente las enfermedades cardiovasculares, su prevención, control y tratamiento. En este año 2024 y bajo el lema “usa el corazón para actuar” campaña en colaboración con la World Heart Federation.</p>
+                        <p class="footer-news-date">Abril 7, 2024</p>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-text">
+                            <p>Calle Payábo, Esq. Limón, Los Ríos, Santo Domingo, D.N.</p>
+                        </div>
+                    </div>
+                  <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="footer-contact-text">
+                            <p>(809)566-2219, Ext. 221</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-text">
+                            <p> info@aidc.do</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 . Esta página fue creada por Juana Osorio y Yuneiry Hernandez.</p>
+                <div class="social-footer">
+                    <a href="https://www.facebook.com/share/1EjtyDoiCU/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aidcardiologia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
